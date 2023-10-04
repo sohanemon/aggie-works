@@ -1,7 +1,7 @@
 export const colors = {
   default: {
-    background: '#ffffff',
-    foreground: '#000000',
+    background: '#ff3fff',
+    foreground: '#fff',
     card: '#ffffff',
     'card-foreground': '#000000',
     popover: '#ffffff',
