@@ -1,0 +1,76 @@
+---
+import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import Combo from '~/experience.png';
+import Heading from '../ui/heading.astro';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+const data = [
+  {
+    label: 'Gain Hands-On Experience',
+    text: 'Work on web and mobile apps with real users in cross-functional product teams.',
+    color: '#edb9d8',
+  },
+
+  {
+    label: 'Grow in Your Career',
+    text: 'Gain the skills and mentorship you need to land your dream role in tech.',
+    color: '#c4bfed',
+  },
+
+  {
+    label: 'Make New Friends',
+    text: 'Bond with a tight-knit community of diverse students through dinners, day trips, and more.',
+    color: '#bcd2f9',
+  },
+  {
+    label: 'Make an Impact',
+    text: 'Leave your legacy at UC Davis by building products for 30,000+ students.',
+    color: '#bcf0d1',
+  },
+];
+---
+
+<main>
+  <div class={cn('container-mini mx-auto', className)}>
+    <Heading class='text-left'>The AggieWorks Experience</Heading>
+    <div class='grid grid-cols-2 max-md:grid-cols-1 py-10'>
+      <div class='space-y-16 py-10 relative'>
+        <div class='w-2 h-[60%] translate-y-32 translate-x-7 bg-black absolute'>
+        </div>
+        {
+          data.map((el) => (
+            <div class='flex gap-10'>
+              <div
+                class='w-16 relative z-10 h-16 aspect-square rounded-full ring-[12px] ring-white'
+                style={{ backgroundColor: el.color }}
+              />
+              <div>
+                <h3 class='text-2xl font-semibold mb-4 '>{el.label}</h3>
+
+                <p>{el.text}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <Image
+        src={Combo}
+        width={600}
+        class={'md:translate-x-16'}
+        alt={'Combo image'}
+      />
+    </div>
+  </div>
+</main>
+<style>
+  main {
+    background: linear-gradient(
+      rgba(255, 229, 241, 0),
+      rgba(215, 229, 255, 1),
+      rgba(223, 255, 233, 1)
+    );
+  }
+</style>

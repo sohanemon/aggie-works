@@ -6,5 +6,6 @@ export const utilities = plugin(({ addUtilities }) => {
     '.scrollbar-hidden': { msOverflowStyle: 'none', scrollbarWidth: 'none' },
     '.center-x': { '@apply ml-[50%] mt-4 -translate-x-1/2': {} },
     '.center-y': { '@apply mt-[50%] mt-4 -translate-y-1/2': {} },
+    '.container-mini': { '@apply px-4 max-w-dense mx-auto': {} },
   });
 });

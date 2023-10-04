@@ -12,6 +12,9 @@ export const theme = plugin(() => {}, {
       },
     },
     extend: {
+      maxWidth: {
+        dense: '925px',
+      },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },

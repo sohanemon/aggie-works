@@ -1,7 +1,11 @@
 ---
+import Experience from '@/components/homepage/experience.astro';
 import Hero from '@/components/homepage/hero.astro';
-import Layout from '../layouts/Layout.astro';
 import OurProducts from '@/components/homepage/our-products.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title='Aggie Works'><Hero /><OurProducts /></Layout>
+<Layout title='Aggie Works'>
+  <Hero /><OurProducts />
+  <Experience />
+</Layout>
