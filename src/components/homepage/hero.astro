@@ -1,21 +1,44 @@
 ---
 import { Image } from 'astro:assets';
-import Bridge from '~/img/bridge.svg';
+import Bridge from '~/bridge.svg';
+import Divider from '~/divider1.svg';
+import Members from '~/group-members.png';
+import Wave from '~/texture1.svg';
 ---
 
-<main class='min-h-[800px] overflow-hidden flex items-center'>
+<main class='min-h-[800px] relative overflow-hidden flex items-center'>
   <div class='container'>
-    <h1 class='text-white text-[64px] font-semibold'>
+    <h1 class='text-white text-5xl lg:text-[64px] font-semibold'>
       Products built for Aggies,<br />by Aggies.
     </h1>
     <Image
-      class={'absolute bottom-0 inset-x-0 scale-125 origin-bottom'}
+      class={'absolute bottom-0 mx-auto inset-x-0 scale-110 2xl:scale-100 origin-bottom'}
       src={Bridge}
       alt={'bg'}
     />
   </div>
 </main>
-
+<div class='relative min-h-screen'>
+  <div class='container flex flex-col pt-32 justify-center'>
+    <h4 class='max-w-[538px] font-medium'>
+      AggieWorks is a product development organization building software for
+      students at UC Davis. We are a tight-knit community of engineers,
+      designers, product managers, and marketers that works to improve student
+      life with innovative technology.
+    </h4>
+    <Image src={Members} alt={'members'} class={'self-end mt-5'} />
+  </div>
+  <Image
+    src={Divider}
+    alt={''}
+    class={'w-full lg:-translate-y-[70px] max-lg:hidden'}
+  />
+  <Image
+    src={Wave}
+    alt={''}
+    class={'absolute max-lg:hidden -z-10 inset-0 w-full'}
+  />
+</div>
 <style>
   main {
     background: linear-gradient(

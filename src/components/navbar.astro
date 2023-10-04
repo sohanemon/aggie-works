@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import Logo from '~/img/logo.svg';
+import Logo from '~/logo.svg';
 const navItems = [
   { label: 'About', link: '/about' },
   { label: 'Team', link: '/team' },
@@ -10,14 +10,14 @@ const navItems = [
 ];
 ---
 
-<section class='fixed top-0 inset-x-0 h-32'>
+<section class='absolute top-0 z-40 inset-x-0 h-32'>
   <nav
     class='absolute h-32 container inset-x-0 flex justify-between items-center'
   >
     <a href='/'>
       <Image src={Logo} alt={'logo'} />
     </a>
-    <ul class='flex items-center gap-12'>
+    <ul class='flex items-center gap-12 max-md:hidden'>
       {
         navItems.map((el) => (
           <a
