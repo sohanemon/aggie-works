@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import Aggie from '~/aggie.png';
+import Clubly from '~/clubly.png';
+import Roomu from '~/roomu.png';
+import Wave from '~/texture2.svg';
+import Heading from '../ui/heading.astro';
+const products = [
+  { label: 'RoomU', image: Roomu },
+  { label: 'AggieExchange', image: Aggie },
+  { label: 'Clubly', image: Clubly },
+];
+---
+
+<section class='relative'>
+  <Heading>Our Products</Heading>
+  <Image src={Wave} alt={''} class={'w-full -z-10 absolute'} />
+  <div class='grid grid-cols-1 my-32 md:grid-cols-3 w-fit mx-auto gap-12'>
+    {
+      products.map((el) => (
+        <div class='flex flex-col gap-7 items-center'>
+          <Image
+            src={el.image}
+            alt={el.label}
+            class='aspect-square h-64 shadow-xl hover:shadow-2xl transition-all rounded-3xl'
+          />
+          <p class='md:text-4xl text-2xl font-medium '>{el.label}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
