@@ -4,6 +4,7 @@ import Aggie from '~/aggie.png';
 import Clubly from '~/clubly.png';
 import Roomu from '~/roomu.png';
 import Wave from '~/texture2.svg';
+import Button from '../ui/button.astro';
 import Heading from '../ui/heading.astro';
 const products = [
   { label: 'RoomU', image: Roomu },
@@ -15,7 +16,7 @@ const products = [
 <section class='relative'>
   <Heading>Our Products</Heading>
   <Image src={Wave} alt={''} class={'w-full -z-10 absolute'} />
-  <div class='grid grid-cols-1 my-32 md:grid-cols-3 w-fit mx-auto gap-12'>
+  <div class='grid grid-cols-1 mt-32 md:grid-cols-3 w-fit mx-auto gap-12'>
     {
       products.map((el) => (
         <div class='flex flex-col gap-7 items-center'>
@@ -29,4 +30,5 @@ const products = [
       ))
     }
   </div>
+  <Button class='block mx-auto my-20'>Learn More</Button>
 </section>
