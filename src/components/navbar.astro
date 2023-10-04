@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '~/img/logo.svg';
+const navItems = [
+  { label: 'About', link: '/about' },
+  { label: 'Team', link: '/team' },
+  { label: 'Products', link: '/products' },
+  { label: 'Join', link: '/join' },
+  { label: 'Contact', link: '/contact' },
+];
+---
+
+<section class='fixed top-0 inset-x-0 h-32'>
+  <nav
+    class='absolute h-32 container inset-x-0 flex justify-between items-center'
+  >
+    <a href='/'>
+      <Image src={Logo} alt={'logo'} />
+    </a>
+    <ul class='flex items-center gap-12'>
+      {
+        navItems.map((el) => (
+          <a
+            href={el.link}
+            class='text-xl hover:text-accent transition-all text-background font-semibold'
+          >
+            {el.label}
+          </a>
+        ))
+      }
+    </ul>
+  </nav>
+</section>
