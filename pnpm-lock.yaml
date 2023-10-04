@@ -14,9 +14,6 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.24)(react@18.2.0)
-  '@sohanemon/utils':
-    specifier: ^3.1.0
-    version: 3.1.0
   '@types/react':
     specifier: ^18.0.21
     version: 18.2.24
@@ -38,6 +35,11 @@ dependencies:
   react-dom:
     specifier: ^18.0.0
     version: 18.2.0(react@18.2.0)
+
+devDependencies:
+  '@tailwindcss/container-queries':
+    specifier: ^0.1.1
+    version: 0.1.1(tailwindcss@3.3.3)
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -47,11 +49,6 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.3.3)
-
-devDependencies:
-  '@tailwindcss/container-queries':
-    specifier: ^0.1.1
-    version: 0.1.1(tailwindcss@3.3.3)
   tw-colors:
     specifier: ^3.0.3
     version: 3.0.3(tailwindcss@3.3.3)
@@ -815,19 +812,6 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
-  /@iconify/react@4.1.1(react@18.2.0):
-    resolution: {integrity: sha512-jed14EjvKjee8mc0eoscGxlg7mSQRkwQG3iX3cPBCO7UlOjz0DtlvTqxqEcHUJGh+z1VJ31Yhu5B9PxfO0zbdg==}
-    peerDependencies:
-      react: '>=16'
-    dependencies:
-      '@iconify/types': 2.0.0
-      react: 18.2.0
-    dev: false
-
-  /@iconify/types@2.0.0:
-    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
-
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
     engines: {node: '>=6.0.0'}
@@ -898,15 +882,6 @@ packages:
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.24)(react@18.2.0)
       '@types/react': 18.2.24
       react: 18.2.0
-    dev: false
-
-  /@sohanemon/utils@3.1.0:
-    resolution: {integrity: sha512-1I5i9QzhtTcmBdyjJD1PDIGLzjmGBLUSy+e/e8FzouSlszBhSmijV02lq5i9OYHCU113VZHZ4Q1ZwEu1FJeaiw==}
-    dependencies:
-      '@iconify/react': 4.1.1(react@18.2.0)
-      clsx: 2.0.0
-      react: 18.2.0
-      tailwind-merge: 1.14.0
     dev: false
 
   /@tailwindcss/container-queries@0.1.1(tailwindcss@3.3.3):
@@ -3475,7 +3450,7 @@ packages:
 
   /tailwind-merge@1.14.0:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
-    dev: false
+    dev: true
 
   /tailwindcss-animate@1.0.7(tailwindcss@3.3.3):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -3483,7 +3458,7 @@ packages:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
       tailwindcss: 3.3.3
-    dev: false
+    dev: true
 
   /tailwindcss@3.3.3:
     resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
