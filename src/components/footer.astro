@@ -1,0 +1,16 @@
+---
+import { cn } from '@/lib/utils';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<div class={cn('bg-foreground relative z-10 -mt-1', className)}>
+  <footer class='container'>
+    <h4 class='text-stone-100 text-2xl font-semibold mb-3'>Stay in touch?</h4>
+    <h6 class='text-background'>
+      Keep up with recruitment and product launches!
+    </h6>
+  </footer>
+</div>

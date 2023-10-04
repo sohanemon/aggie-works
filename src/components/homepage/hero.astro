@@ -7,7 +7,7 @@ import Wave from '~/texture1.svg';
 import Button from '../ui/button.astro';
 ---
 
-<main class='min-h-[800px] relative overflow-hidden flex items-center'>
+<main class='min-h-[800px] gradient relative overflow-hidden flex items-center'>
   <div class='container'>
     <h1 class='text-white text-5xl lg:text-[64px] font-semibold'>
       Products built for Aggies,<br />by Aggies.
@@ -41,8 +41,8 @@ import Button from '../ui/button.astro';
     class={'absolute max-lg:hidden -z-10 inset-0 w-full'}
   />
 </div>
-<style>
-  main {
+<style is:global>
+  .gradient {
     background: linear-gradient(
       90deg,
       rgba(83, 180, 112, 1),
