@@ -1,0 +1,13 @@
+---
+import { cn } from '@/lib/utils';
+import Heading from '../ui/heading.astro';
+
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<div class={cn('', className)}>
+  <Heading>Where We Go Next</Heading>
+</div>

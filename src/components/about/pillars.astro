@@ -1,16 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import Aggie from '~/aggie.png';
-import Clubly from '~/clubly.png';
-import Roomu from '~/roomu.png';
+import Divider from '~/divider1.svg';
+import Milap from '~/milap.png';
 import Wave from '~/texture2.svg';
+import PinkWave from '~/wave-pink.svg';
 import Card from '../card.astro';
 import Heading from '../ui/heading.astro';
-const products = [
-  { label: 'RoomU', image: Roomu },
-  { label: 'AggieExchange', image: Aggie },
-  { label: 'Clubly', image: Clubly },
-];
+
 const pillars = [
   {
     label: 'Product',
@@ -42,24 +38,74 @@ const values = [
 ];
 ---
 
-<section class='relative'>
-  <Heading>Our Pillars</Heading>
-  <h4 class='text-center'>Key components of the AggieWorks experience.</h4>
-  <Image src={Wave} alt={''} class={'w-full scale-x-[-1] -z-10 absolute'} />
-  <div
-    class='container-mini grid grid-cols-1 gap-12 py-14 md:grid-cols-2 lg:grid-cols-3'
-  >
-    {pillars.map((el) => <Card {...el} />)}
+<section
+  class='bg-gradient-to-t pb-96 from-primary/10 via-primary/30 to-transparent'
+>
+  <div class='relative'>
+    <Heading>Our Pillars</Heading>
+    <h4 class='text-center'>Key components of the AggieWorks experience.</h4>
+    <Image
+      src={Wave}
+      alt={''}
+      class={'w-full scale-x-[-1] max-md:hidden -translate-y-20 -z-10 absolute'}
+    />
+    <div
+      class='container-mini grid grid-cols-1 gap-12 py-14 md:grid-cols-2 lg:grid-cols-3'
+    >
+      {pillars.map((el) => <Card {...el} />)}
+    </div>
   </div>
-</section>
-<br />
-<section class='relative'>
-  <Heading>Our Values</Heading>
-  <h4 class='text-center'>Key components of the AggieWorks experience.</h4>
-  <Image src={Wave} alt={''} class={'w-full -z-10 absolute'} />
-  <div
-    class='container-mini grid grid-cols-1 gap-12 py-14 md:grid-cols-2 lg:grid-cols-3'
-  >
-    {values.map((el) => <Card {...el} />)}
+  <br />
+  <div class='relative'>
+    <Heading>Our Values</Heading>
+    <h4 class='text-center'>Key components of the AggieWorks experience.</h4>
+    <Image
+      src={PinkWave}
+      alt={''}
+      class={'w-full translate-y-20 max-md:hidden -z-10 absolute'}
+    />
+    <div
+      class='container-mini grid grid-cols-1 gap-12 py-14 md:grid-cols-2 lg:grid-cols-3'
+    >
+      {values.map((el) => <Card {...el} />)}
+    </div>
   </div>
+  <br />
 </section>
+<div
+  class='bg-gradient-to-b from-[#99BAF6] -translate-y-1/2 mx-auto relative w-fit rounded-full p-3 to-transparent from-50% to-50%'
+>
+  <Image
+    src={Milap}
+    alt={'milap'}
+    class='rounded-full border-[28px] border-background'
+  />
+  <div
+    class='h-3 bg-[#99BAF6] w-screen inset-y-0 left-1/2 -translate-x-1/2 -z-10 my-auto absolute'
+  >
+  </div>
+</div>
+<div class='-mt-44 mb-20'>
+  <h4 class='text-center text-[40px] font-semibold'>Our Founding Story</h4>
+  <br />
+  <p class='max-w-[561px] text-center mx-auto'>
+    AggieWorks was founded in Summer 2020 by
+    <a
+      href='https://www.linkedin.com/in/milappatel3/'
+      target='_blank'
+      class='underline'>Milap Patel</a
+    >
+     . Milap noticed that product was never a focus in the UC Davis community
+    and wanted to do something about it. He realized ratemyprofessors.com was
+    not cutting his need to understand the course landscape, so he scrapped
+    together a team and began to build what would soon be AggieReview, the first
+    AggieWorks product. Since then, AggieWorks has grown from 5 to 40+ members
+    and 3 product teams. We're continued to grow with the mission of building
+    products with exceptional user experiences that address needs on campus.
+  </p>
+</div>
+<Image
+  src={Divider}
+  alt={''}
+  class={'w-full lg:-translate-y-[60px] max-lg:hidden'}
+/>
