@@ -1,6 +1,10 @@
 ---
 import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
 import Heading from '../ui/heading.astro';
+const images = await Astro.glob('../../assets/companies/*.png').then((files) =>
+  files.map((file) => file.default)
+);
 
 type Props = {
   class?: string;
@@ -8,6 +12,11 @@ type Props = {
 const { class: className } = Astro.props;
 ---
 
-<div class={cn('', className)}>
+<div class={cn('mb-40', className)}>
   <Heading>Where We Go Next</Heading>
+  <div
+    class='container-mini !p-12 md:shadow-2xl rounded-2xl my-20 items-center gap-10 justify-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
+  >
+    {images.map((image) => <Image src={image} alt={''} />)}
+  </div>
 </div>
