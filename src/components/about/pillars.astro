@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import Aggie from '~/aggie.png';
+import Clubly from '~/clubly.png';
+import Roomu from '~/roomu.png';
+import Wave from '~/texture2.svg';
+import Card from '../card.astro';
+import Heading from '../ui/heading.astro';
+const products = [
+  { label: 'RoomU', image: Roomu },
+  { label: 'AggieExchange', image: Aggie },
+  { label: 'Clubly', image: Clubly },
+];
+const pillars = [
+  {
+    label: 'Product',
+    text: 'Our members work on impactful, real-world products that go beyond their resume. We have cross-functional teams consisting of product managers, designers, and engineers. ',
+  },
+  {
+    label: 'Education',
+    text: 'We provide education on industry-standard technologies and product development processes. Members also receive career mentorship from experienced interns and professionals. ',
+  },
+  {
+    label: 'Community',
+    text: 'We are a tight-knit community of passionate students in tech. Members build long-lasting friendships through a multitude of social events throughout the term. ',
+  },
+];
+
+const values = [
+  {
+    label: 'Innovation',
+    text: 'We build creative and unique solutions to student problems. We challenge ourselves to think outside the box and value ideas from anyone.',
+  },
+  {
+    label: 'Passion',
+    text: 'We are highly dedicated and passionate about our work. We put in time and thought to build products with exceptional user experiences.',
+  },
+  {
+    label: 'Community',
+    text: 'We support and challenge each other to reach our fullest potential inside and outside of AggieWorks. We work as a team and grow as a family.',
+  },
+];
+---
+
+<section class='relative'>
+  <Heading>Our Pillars</Heading>
+  <h4 class='text-center'>Key components of the AggieWorks experience.</h4>
+  <Image src={Wave} alt={''} class={'w-full scale-x-[-1] -z-10 absolute'} />
+  <div
+    class='container-mini grid grid-cols-1 gap-12 py-14 md:grid-cols-2 lg:grid-cols-3'
+  >
+    {pillars.map((el) => <Card {...el} />)}
+  </div>
+</section>
+<br />
+<section class='relative'>
+  <Heading>Our Values</Heading>
+  <h4 class='text-center'>Key components of the AggieWorks experience.</h4>
+  <Image src={Wave} alt={''} class={'w-full -z-10 absolute'} />
+  <div
+    class='container-mini grid grid-cols-1 gap-12 py-14 md:grid-cols-2 lg:grid-cols-3'
+  >
+    {values.map((el) => <Card {...el} />)}
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import { cn } from '@/lib/utils';
+type Props = {
+  class?: string;
+  label: string;
+  text: string;
+};
+const { class: className, label, text } = Astro.props;
+---
+
+<div
+  class={cn(
+    'bg-background min-w-[275px] aspect-square px-4 py-6 shadow-lg rounded-xl',
+    className
+  )}
+>
+  <h2
+    class='gradient-text w-fit mx-auto text-transparent bg-clip-text mb-3 text-[32px] font-semibold'
+  >
+    {label}
+  </h2>
+  <h4 class='text-center'>{text}</h4>
+</div>
+
+<style>
+  .gradient-text {
+    background-image: linear-gradient(
+      90deg,
+      #53b470,
+      #4783ef,
+      #7563ce,
+      #c4427e
+    );
+  }
+</style>

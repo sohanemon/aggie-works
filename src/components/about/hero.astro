@@ -1,0 +1,51 @@
+---
+import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import Divider from '~/divider1.svg';
+import team from '~/team.png';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<div class={cn('', className)}>
+  <div class='bg-foreground'>
+    <div
+      class='container text-5xl leading-normal font-semibold text-background pt-40 pb-11'
+    >
+      <span>We are a community of</span>
+      <br /><span class='text-pink-600'>product managers.</span>
+    </div>
+  </div>
+  <div class='bg-background h-[450px] relative'>
+    <Image
+      src={team}
+      width={816}
+      class='ml-auto object-cover max-md:hidden h-[inherit]'
+      alt='team photo'
+    />
+    <div class='container absolute inset-0 items-center grid md:grid-cols-2'>
+      <div class='md:max-w-[80%]'>
+        <h4 class='text-2xl font-semibold'>
+          Improving life at UC Davis with <br />products built for students, by
+          students.
+        </h4>
+        <br />
+        <p>
+          AggieWorks is a product development organization building software for
+          students at UC Davis. We are a tight-knit community of engineers,
+          designers, product managers, and marketers that works to improve
+          designers, product managers, and marketers that works to improve
+          student life with innovative technology.
+        </p>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <Image
+    src={Divider}
+    alt={''}
+    class={'w-full lg:-translate-y-[60px] max-lg:hidden'}
+  />
+</div>
