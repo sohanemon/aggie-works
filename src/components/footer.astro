@@ -1,5 +1,8 @@
 ---
 import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import Wave from '~/wave.svg';
+import Button from './ui/button.astro';
 type Props = {
   class?: string;
 };
@@ -7,10 +10,26 @@ const { class: className } = Astro.props;
 ---
 
 <div class={cn('bg-foreground relative z-10 -mt-1', className)}>
-  <footer class='container'>
+  <footer class='container pb-4 pt-20 max-md:pb-20'>
     <h4 class='text-stone-100 text-2xl font-semibold mb-3'>Stay in touch?</h4>
     <h6 class='text-background'>
       Keep up with recruitment and product launches!
     </h6>
+    <br />
+    <div class='flex gap-6 max-sm:flex-col'>
+      <input
+        class='max-w-[271px] w-full h-[45px] px-4 bg-white rounded-[10px]'
+        placeholder='Enter email here'
+      />
+      <Button class='invert'>Subscribe</Button>
+    </div>
   </footer>
+  <Image src={Wave} alt={'wave'} class={'w-full scale-x-[-1] scale-y-[-1]'} />
+  <div class='footer h-96 max-md:-mt-4 -mt-20'></div>
 </div>
+
+<style>
+  .footer {
+    background: linear-gradient(90deg, #ffe5f1, #d7e5ff, #bcf3cc);
+  }
+</style>

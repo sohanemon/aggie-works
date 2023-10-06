@@ -8,9 +8,9 @@ type Props = {
 const { class: className } = Astro.props;
 ---
 
-<div class={cn('relative  gradient', className)}>
+<div class={cn('relative max-md:pt-12  gradient', className)}>
   <div
-    class='container flex gap-6 min-h-[340px] items-center justify-between flex-wrap'
+    class='container flex gap-6 min-h-[340px] max-md:pb-12 items-center justify-between flex-wrap'
   >
     {
       Array.from(Array(3)).map((el) => (
