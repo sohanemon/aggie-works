@@ -45,11 +45,11 @@ const data = [
   <Image
     src={Wave}
     alt={'wave'}
-    class={'w-full -mb-20 scale-x-[-1] scale-y-[-1]'}
+    class={'w-full md:-mb-10 lg:-mb-20 scale-x-[-1] scale-y-[-1]'}
   />
   <div class='footer'>
     <div
-      class='container max-md:flex-col max-md:-mt-4 pt-32 flex max-md:gap-7 gap-20'
+      class='container max-md:flex-col max-md:-mt-4 pt-8 md:pt-32 flex max-md:gap-7 gap-20'
     >
       {
         data.map((el) => (
@@ -70,7 +70,9 @@ const data = [
         ))
       }
     </div>
-    <footer class='md:text-center block container font-medium py-8'>
+    <footer
+      class='md:text-center block container font-medium pt-0 pb-8 md:py-8'
+    >
       Made with {'<3'} by AggieWorks
     </footer>
   </div>
