@@ -1,0 +1,36 @@
+---
+import { cn } from '@/lib/utils';
+import Button from './ui/button.astro';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+const inputs = [
+  { label: 'first name', type: 'text' },
+  { label: 'last name', type: 'text' },
+  { label: 'email', type: 'email' },
+];
+---
+
+<div class={cn('', className)}>
+  <center class='text-2xl mb-8 font-semibold'
+    >Use this field to start a conversation.</center
+  >
+  <form class='space-y-5'>
+    {
+      inputs.map((el) => (
+        <input
+          placeholder={el.label}
+          type={el.type as any}
+          required
+          class='w-full h-10 bg-zinc-100 px-4 placeholder:capitalize rounded-[10px] shadow-inner'
+        />
+      ))
+    }
+    <textarea
+      placeholder='Type your message here...'
+      rows='14'
+      class='w-full bg-zinc-100 p-4 rounded-[10px] shadow-inner'></textarea>
+    <center><Button>Send</Button></center>
+  </form>
+</div>

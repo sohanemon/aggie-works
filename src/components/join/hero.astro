@@ -11,22 +11,22 @@ type Props = {
 const { class: className } = Astro.props;
 ---
 
-<div class={cn('my-28 relative', className)}>
+<div class={cn('md:my-28 my-8 relative', className)}>
   <h2 class='text-5xl font-semibold container'>
     Interested in AggieWorks?<br />You’re in the right place.
   </h2>
   <div class='container flex mt-12 lg:mt-56 flex-col'>
-    <h5 class='text-4xl font-semibold uppercase'>
+    <h5 class='md:text-4xl text-2xl font-semibold uppercase'>
       FALL 2023 Applications open!
     </h5>
     <p>Read below to learn more or hit the apply button to start.</p>
     <Button class='w-fit my-8'>Apply</Button>
     <button
-      class='text-xl font-medium inline-flex items-center gradient-text w-fit text-transparent bg-clip-text font-mono tracking-widest'
+      class='md:text-xl font-medium inline-flex items-center gradient-text w-fit text-transparent bg-clip-text font-mono tracking-widest'
     >
       TAKE-HOME ASSIGNMENT <svg
         fill='none'
-        class='text-[#c4427e] w-[18px] mb-1'
+        class='text-[#c4427e] w-4 md:w-[18px] md:mb-1'
         stroke='currentColor'
         stroke-width='1.7'
         viewBox='0 0 24 24'

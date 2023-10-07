@@ -1,0 +1,36 @@
+---
+import ContactForm from '@/components/contact-form.astro';
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Wave from '~/wave.svg';
+const APPLICATION_OPEN = true;
+---
+
+<Layout title='Contact'>
+  <div class='bg-foreground h-20'></div>
+  <Image
+    src={Wave}
+    alt={''}
+    class={'scale-x-[-1] -translate-y-1 scale-y-[-1] w-full'}
+  />
+  <section
+    class='grid grid-cols-1 gap-20 py-5 md:py-32 md:grid-cols-2 container'
+  >
+    <aside>
+      <h2 class='text-5xl font-semibold'>Interested in working with us?</h2>
+      <p class='my-12'>
+        AggieWorks offers client services in product strategy, product design,
+        and software development. We are looking for companies, non-profits, and
+        campus departments with exciting projects to work on. If you have a
+        project for us, please reach out!
+      </p>
+      <div class='text-2xl'>
+        Use the form at the right, or email us at<br /><span
+          class="text-neutral-800 text-2xl font-semibold font-['Inter'] leading-[35px]"
+          >hello@aggieworks.org</span
+        >.
+      </div>
+    </aside>
+    <ContactForm />
+  </section>
+</Layout>

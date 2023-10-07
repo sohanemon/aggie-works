@@ -12,9 +12,9 @@ type Props = {
 const { class: className, label, image, text, caption } = Astro.props;
 ---
 
-<div class={cn('container  grid grid-cols-[4fr_7fr]', className)}>
-  <div class='flex-col flex py-6 max-h-full'>
-    <h3 class='text-5xl mb-6 font-semibold'>{label}</h3>
+<div class={cn('container  grid md:grid-cols-[4fr_7fr]', className)}>
+  <div class='flex-col max-md:order-last flex py-6 max-h-full'>
+    <h3 class='md:text-5xl text-3xl mb-6 font-semibold'>{label}</h3>
     <h5 class='text-black text-2xl font-medium'>
       {caption}
     </h5>
