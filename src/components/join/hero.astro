@@ -1,0 +1,65 @@
+---
+import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import Divider from '~/divider1.svg';
+import HeroImg from '~/join-hero.png';
+
+import Button from '../ui/button.astro';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<div class={cn('my-28 relative', className)}>
+  <h2 class='text-5xl font-semibold container'>
+    Interested in AggieWorks?<br />You’re in the right place.
+  </h2>
+  <div class='container flex mt-12 lg:mt-56 flex-col'>
+    <h5 class='text-4xl font-semibold uppercase'>
+      FALL 2023 Applications open!
+    </h5>
+    <p>Read below to learn more or hit the apply button to start.</p>
+    <Button class='w-fit my-8'>Apply</Button>
+    <button
+      class='text-xl font-medium inline-flex items-center gradient-text w-fit text-transparent bg-clip-text font-mono tracking-widest'
+    >
+      TAKE-HOME ASSIGNMENT <svg
+        fill='none'
+        class='text-[#c4427e] w-[18px] mb-1'
+        stroke='currentColor'
+        stroke-width='1.7'
+        viewBox='0 0 24 24'
+        xmlns='http://www.w3.org/2000/svg'
+        aria-hidden='true'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25'></path>
+      </svg>
+    </button>
+  </div>
+  <Image
+    alt={'team'}
+    class={'absolute right-0 top-0 max-lg:hidden'}
+    src={HeroImg}
+  />
+  <Image
+    alt={'team'}
+    class={'w-full relative z-10 max-lg:hidden'}
+    src={Divider}
+  />
+</div>
+
+<style>
+  .gradient-text {
+    background-image: linear-gradient(
+      90deg,
+      #53b470,
+      #4783ef,
+      #7563ce,
+      #c4427e
+    );
+  }
+</style>

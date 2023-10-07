@@ -1,0 +1,19 @@
+---
+import Hero from '@/components/join/hero.astro';
+import Timeline from '@/components/join/timeline.astro';
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Wave from '~/wave.svg';
+const APPLICATION_OPEN = true;
+---
+
+<Layout title='Team'>
+  <div class='bg-foreground h-20'></div>
+  <Image
+    src={Wave}
+    alt={''}
+    class={'scale-x-[-1] -translate-y-1 scale-y-[-1] w-full'}
+  />
+  <Hero />
+  {APPLICATION_OPEN && <Timeline />}
+</Layout>

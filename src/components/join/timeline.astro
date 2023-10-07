@@ -1,0 +1,101 @@
+---
+import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import Divider from '~/divider1.svg';
+import Lines from '~/lines.svg';
+import Button from '../ui/button.astro';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+
+const data = [
+  {
+    label: 'Applications Open',
+    date: '09/20',
+    text: 'Submit your application and take-home assignment here.',
+    color: '#f1b8d4',
+  },
+
+  {
+    label: 'Info Session',
+    date: '10/02',
+    text: 'Come learn about AggieWorks and meet our board!',
+    time: '7:30-9PM',
+    tlc: 'TLC 2010',
+    color: '#d1bce7',
+  },
+
+  {
+    label: 'Office Hours + Mixer',
+    date: '10/03',
+    text: 'Get help with your take-home and get to know our members one-on-one!',
+    time: '6-7PM',
+    tlc: 'TLC 3214',
+    color: '#c0caf4',
+  },
+  {
+    label: 'Tech Clubs Mixer',
+    date: '10/04',
+    text: 'AggieWorks and AISC are co-hosting a mixer featuring UC Davis tech clubs!',
+    time: '7-9PM',
+    tlc: 'TLC 1020',
+    color: '#bbdfe7',
+  },
+  {
+    label: 'Applications Close',
+    date: '10/06',
+    time: '11:59PM',
+    text: 'Submit your application and take-home assignment here.',
+    color: '#bcf3cc',
+  },
+];
+---
+
+<div class={cn('container relative', className)}>
+  <Image
+    src={Lines}
+    alt={'line'}
+    class={'absolute right-10 scale-y-[1.1] max-md:hidden -top-32'}
+  />
+  <div class='text-[40px] font-semibold md:ml-32'>Recruitment Timeline</div>
+  <div class='space-y-10 relative mb-20'>
+    <div class='w-2 h-[90%] ml-[164px] max-md:hidden bg-black absolute'></div>
+    {
+      data.map((el) => (
+        <div class='flex max-md:flex-col gap-2 md:gap-10'>
+          <div class='w-24'>
+            <h3 class='mb-2 text-2xl font-medium font-mono tracking-widest'>
+              {el.date}
+            </h3>
+            <p>{el.time}</p>
+          </div>
+          <div
+            class='w-16 relative z-10 h-16 max-md:hidden aspect-square rounded-full ring-[12px] ring-white'
+            style={{ backgroundColor: el.color }}
+          />
+          <div>
+            <h3 class='text-2xl font-semibold mb-1 line-clamp-1'>{el.label}</h3>
+            <h5 class='font-semibold mb-2'>TLC 2010</h5>
+            <p class='line-clamp-2'>{el.text}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class='md:ml-32 mb-20'>
+    <h4 class='text-2xl font-semibold'>
+      Wanna get personal? Coffee chats are here!
+    </h4>
+    <p class='max-w-[520px] mt-4 mb-6'>
+      Sign up for a 15-minute coffee chat with one of our board members to learn
+      more about AggieWorks and get your questions answered!
+    </p>
+    <Button>SIGN UP</Button>
+  </div>
+</div>
+<Image
+  alt={'team'}
+  class={'w-full relative z-10 max-lg:hidden'}
+  src={Divider}
+/>
