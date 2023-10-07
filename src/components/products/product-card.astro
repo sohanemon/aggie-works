@@ -1,0 +1,27 @@
+---
+import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import Button from '../ui/button.astro';
+type Props = {
+  class?: string;
+  label: string;
+  caption: string;
+  text: string;
+  image: any;
+};
+const { class: className, label, image, text, caption } = Astro.props;
+---
+
+<div class={cn('container  grid grid-cols-[4fr_7fr]', className)}>
+  <div class='flex-col flex py-6 max-h-full'>
+    <h3 class='text-5xl mb-6 font-semibold'>{label}</h3>
+    <h5 class='text-black text-2xl font-medium'>
+      {caption}
+    </h5>
+    <p class='my-6 flex-1'>
+      {text}
+    </p>
+    <Button class='uppercase w-fit'>Learn More</Button>
+  </div>
+  <Image src={image} alt={''} />
+</div>

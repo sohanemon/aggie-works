@@ -1,0 +1,54 @@
+---
+import AE from '~/banner/AE.png';
+import Clubly from '~/banner/Clubly.png';
+import Roomu from '~/banner/Roomu.png';
+import ProductCard from '../components/products/product-card.astro';
+import Layout from '../layouts/Layout.astro';
+
+export const productData = [
+  {
+    label: 'AggieExchange',
+    caption: 'Buy, sell, and trade with confidence.',
+    text: "Step into AggieExchange, the trusted online marketplace exclusively for UC Davis students. Whether you 're looking for something specific or have something to sell, our platform allows you to connect with fellow Aggies to ensure every exchange is safe, secure, and in tune with the campus community.",
+    image: AE,
+  },
+  {
+    label: 'RoomU',
+    caption: 'Your perfect roommate, one swipe a way.',
+    text: 'Navigating the roommate search can be daunting, but with RoomU, it doesn’t have to be. Designed exclusively for UC Davis students, our platform emphasizes safety and compatibility. Discover fellow Aggies who match your lifestyle and preferences, ensuring every match feels just right.',
+    image: Roomu,
+  },
+  {
+    label: 'Clubly',
+    caption: 'Club exploration, reimagined.',
+    text: 'Venture into the heart of UC Davis clubs with Clubly. Our platform is tailored to make it effortless to discover clubs that resonate with your passions. Dive in and let Clubly be your compass to navigating campus involvement.',
+    image: Clubly,
+  },
+];
+---
+
+<Layout title='Products'>
+  <div class='bg-foreground'>
+    <div class='container'>
+      <p
+        class='pt-40 pb-12 text-[84px] font-semibold gradient-text text-transparent bg-clip-text gradient-text w-fit'
+      >
+        Products
+      </p>
+    </div>
+  </div>
+  <div class='mt-20'>
+    {productData.map((el) => <ProductCard {...el} />)}
+  </div>
+</Layout>
+<style>
+  .gradient-text {
+    background-image: linear-gradient(
+      90deg,
+      #53b470,
+      #4783ef,
+      #7563ce,
+      #c4427e
+    );
+  }
+</style>
