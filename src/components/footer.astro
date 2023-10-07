@@ -12,15 +12,17 @@ const data = [
   {
     label: 'General',
     links: [
-      { label: 'HOME', href: '' },
-      { label: 'ABOUT', href: '' },
-      { label: 'PRODUCTS', href: '' },
-      { label: 'JOIN US', href: '' },
+      { label: 'HOME', href: '/' },
+      { label: 'ABOUT', href: '/about' },
+      { label: 'PRODUCTS', href: '/products' },
+      { label: 'JOIN US', href: 'join' },
     ],
   },
   {
     label: 'Contact Us',
-    links: [{ label: 'hello@aggieworks.org ', href: '' }],
+    links: [
+      { label: 'hello@aggieworks.org', href: 'mailto:hello@aggieworks.org' },
+    ],
   },
 ];
 ---
@@ -40,10 +42,14 @@ const data = [
       <Button class='invert'>Subscribe</Button>
     </div>
   </footer>
-  <Image src={Wave} alt={'wave'} class={'w-full scale-x-[-1] scale-y-[-1]'} />
+  <Image
+    src={Wave}
+    alt={'wave'}
+    class={'w-full -mb-20 scale-x-[-1] scale-y-[-1]'}
+  />
   <div class='footer'>
     <div
-      class='container max-md:flex-col max-md:-mt-4 -mt-20 pt-32 flex max-md:gap-7 gap-20'
+      class='container max-md:flex-col max-md:-mt-4 pt-32 flex max-md:gap-7 gap-20'
     >
       {
         data.map((el) => (
@@ -64,12 +70,14 @@ const data = [
         ))
       }
     </div>
-    <footer class='md:text-center container font-medium py-8'>
+    <footer class='md:text-center block container font-medium py-8'>
       Made with {'<3'} by AggieWorks
     </footer>
   </div>
   <style>
     .footer {
+      display: flex;
+      flex-direction: column;
       background: linear-gradient(90deg, #ffe5f1, #d7e5ff, #bcf3cc);
     }
   </style>
