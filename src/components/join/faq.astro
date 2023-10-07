@@ -1,0 +1,51 @@
+---
+import { cn } from '@/lib/utils';
+type Props = {
+  class?: string;
+};
+const { class: className } = Astro.props;
+const data = [
+  {
+    ques: 'How does AggieWorks operate?',
+    ans: 'Each member is placed on a cross-functional product team with engineers, designers, product managers, and marketers. Members attend weekly general meetings, bond through social events, and gain valuable technical and soft skills in their role.',
+  },
+  {
+    ques: 'What kinds of projects do members work on?',
+    ans: 'Members work on real products with real users. These include web and mobile apps catered to the needs of UC Davis students. Learn more about our existing products on our products page.',
+  },
+
+  {
+    ques: 'What is the time commitment like?',
+    ans: 'All members are expected to commit a minimum of 10 hours per week toward completion of their project and attendance of meetings/events. Being an AggieWorks members can be time consuming, so please be aware of your other time commitments before applying.',
+  },
+  {
+    ques: 'How can AggieWorks support me professionally?',
+    ans: 'We provide career resources and mentorship from experienced interns and alumni across product management, design, and engineering. Our members have gone on to work at companies including Apple, Meta, Google, Amazon, and LinkedIn.',
+  },
+
+  {
+    ques: 'What is the duration of each position?',
+    ans: 'All new members are expected to commit a minimum of one quarter. New members will have an introductory period of one quarter and be invited back should work quality standards and expectations be met.',
+  },
+
+  {
+    ques: 'Does AggieWorks have membership dues?',
+    ans: 'Yes, members are required to pay a $15 due each quarter. Membership dues go toward funding our products, org-wide events, and marketing costs.',
+  },
+];
+---
+
+<div class={cn('container', className)}>
+  <h2 class='text-[40px] font-semibold'>FAQ</h2>
+
+  <div class='grid grid-cols-1 mt-12 mb-28 gap-x-10 gap-y-12 md:grid-cols-2'>
+    {
+      data.map(({ ques, ans }) => (
+        <div class='max-w-md space-y-5'>
+          <h3 class='font-semibold'>{ques}</h3>
+          <div class='leading-tight'>{ans}</div>
+        </div>
+      ))
+    }
+  </div>
+</div>

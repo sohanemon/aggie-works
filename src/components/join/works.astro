@@ -1,0 +1,79 @@
+---
+import { cn } from '@/lib/utils';
+type Props = {
+  class?: string;
+};
+const accordionData = [
+  {
+    label: 'Software Engineer',
+    content:
+      ' lorem, ipsum dolor sit amet consectetur adipisicing elit. ullam odio hic nisi voluptatem reprehenderit, cum quidem aliquam beatae asperiores dignissimos libero dolor ea fugit possimus eos, quisquam iste nostrum fuga.',
+  },
+  {
+    label: 'Product Designer',
+    content:
+      ' lorem, ipsum dolor sit amet consectetur adipisicing elit. ullam odio hic nisi voluptatem reprehenderit, cum quidem aliquam beatae asperiores dignissimos libero dolor ea fugit possimus eos, quisquam iste nostrum fuga.',
+  },
+  {
+    label: 'Product Manager',
+    content:
+      ' lorem, ipsum dolor sit amet consectetur adipisicing elit. ullam odio hic nisi voluptatem reprehenderit, cum quidem aliquam beatae asperiores dignissimos libero dolor ea fugit possimus eos, quisquam iste nostrum fuga.',
+  },
+  {
+    label: 'Product Marketing Manager',
+    content:
+      ' lorem, ipsum dolor sit amet consectetur adipisicing elit. ullam odio hic nisi voluptatem reprehenderit, cum quidem aliquam beatae asperiores dignissimos libero dolor ea fugit possimus eos, quisquam iste nostrum fuga.',
+  },
+  {
+    label: 'Graphic Designer',
+    content:
+      ' lorem, ipsum dolor sit amet consectetur adipisicing elit. ullam odio hic nisi voluptatem reprehenderit, cum quidem aliquam beatae asperiores dignissimos libero dolor ea fugit possimus eos, quisquam iste nostrum fuga.',
+  },
+];
+const { class: className } = Astro.props;
+---
+
+<div class={cn('container  my-32 ', className)}>
+  <div class='max-w-2xl'>
+    <h2 class='text-[40px] font-semibold'>How We Work</h2>
+    <p class='leading-tight my-7'>
+      In AggieWorks, we value cross-functional teamwork and leveraging each
+      other’s strengths to build great things. We have a variety of roles and
+      everyone plays an active part in taking our products from 0 to 1.
+    </p>
+    <h3 class='text-2xl font-semibold mt-12 mb-5'>General Requirements</h3>
+    <ul class='leading-tight space-y-5 list-disc pl-5 max-w-xl'>
+      <li>
+        Available <span class='font-bold'>Tuesdays 7-9pm</span>
+         for the duration of the quarter for our Weekly General Meeting.
+      </li>
+      <li>
+        Able to uphold a minimum<span class='font-bold'
+          >one quarter commitment</span
+        >New members will have an introductory period of one quarter and be
+        invited back should work quality standards and expectations be met.
+      </li>
+      <li>
+        Able to uphold a time commitment of<span class='font-bold'
+          >10 hours per week</span
+        >(including all meetings/events and independent work).
+      </li>
+    </ul>
+    <div class='text-2xl font-semibold mt-14'>Roles</div>
+    <div class='space-y-8 my-8'>
+      {
+        accordionData.map((el) => (
+          <div class='collapse collapse-plus text-background bg-foreground'>
+            <input type='radio' name='my-accordion-3' checked='checked' />
+            <div class='collapse-title text-xl textfor font-medium'>
+              {el.label}
+            </div>
+            <div class='collapse-content'>
+              <p>{el.content}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

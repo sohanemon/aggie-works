@@ -1,6 +1,10 @@
 ---
+import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import Logo from '~/logo.svg';
+const pathname = Astro.url.pathname;
+console.log('🛑 ~ pathname:', pathname);
+
 const navItems = [
   { label: 'About', link: '/about' },
   { label: 'Team', link: '/team' },
@@ -22,7 +26,10 @@ const navItems = [
         navItems.map((el) => (
           <a
             href={el.link}
-            class='text-xl hover:text-accent transition-all text-background font-semibold'
+            class={cn(
+              'text-xl hover:text-accent transition-all text-background font-semibold',
+              { 'text-accent': pathname.includes(el.link) }
+            )}
           >
             {el.label}
           </a>
