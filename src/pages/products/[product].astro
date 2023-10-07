@@ -1,4 +1,9 @@
 ---
+import Button from '@/components/ui/button.astro';
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Wave from '~/wave.svg';
+import { productData } from '../products.astro';
 export function getStaticPaths() {
   return [
     { params: { product: 'aggieexchange' } },
@@ -7,6 +12,47 @@ export function getStaticPaths() {
   ];
 }
 const { product } = Astro.params;
+const currentProduct = productData.find(
+  (el) => el.label.toLowerCase() === product
+);
+console.log('🛑 ~ currentProduct:', currentProduct);
 ---
 
-<div>Good product, {product}!</div>
+<Layout title={product!}>
+  <div class='bg-foreground h-20'></div>
+  <Image
+    src={Wave}
+    alt={''}
+    class={'scale-x-[-1] -translate-y-1 scale-y-[-1] w-full'}
+  />
+  <Image
+    transition:name={currentProduct?.label}
+    src={currentProduct?.image!}
+    alt={''}
+    class={'w-full -mt-20 relative -z-10'}
+  />
+  <section class='gradient -mb-5 md:-mb-20'>
+    <div class={'max-md:py-12 py-24 container'}>
+      <p class='max-w-[720px] text-xl font-medium'>
+        Navigating the roommate search can be daunting, but with RoomU, it
+        doesn’t have to be. Designed exclusively for UC Davis students, our
+        platform emphasizes safety and compatibility. Discover fellow Aggies who
+        match your lifestyle and preferences, ensuring every match feels just
+        right.
+      </p>
+      <Button class='mt-14'>Link</Button>
+    </div>
+  </section>
+  <Image src={Wave} alt={'wave'} class={'w-full'} />
+</Layout>
+<style>
+  .gradient {
+    background-image: linear-gradient(
+      90deg,
+      #d9d9d900,
+      #c2437f0a,
+      #4389f03d,
+      #51b378a1
+    );
+  }
+</style>

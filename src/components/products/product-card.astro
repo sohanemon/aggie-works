@@ -21,7 +21,16 @@ const { class: className, label, image, text, caption } = Astro.props;
     <p class='my-6 flex-1'>
       {text}
     </p>
-    <Button class='uppercase w-fit'>Learn More</Button>
+    <a href={'/products/' + label.toLowerCase()}>
+      <Button class='uppercase w-fit'>Learn More</Button>
+    </a>
   </div>
-  <Image src={image} alt={''} />
+  <a href={'/products/' + label.toLowerCase()}>
+    <Image
+      transition:name={label}
+      src={image}
+      class={'rounded-2xl drop-shadow-lg hover:drop-shadow-2xl transition-all'}
+      alt={''}
+    />
+  </a>
 </div>

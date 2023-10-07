@@ -2,8 +2,9 @@
 import ContactForm from '@/components/contact-form.astro';
 import Layout from '@/layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import ContactCurve from '~/contact-curve.svg';
+import ContactWave from '~/contact-wave.svg';
 import Wave from '~/wave.svg';
-const APPLICATION_OPEN = true;
 ---
 
 <Layout title='Contact'>
@@ -14,7 +15,7 @@ const APPLICATION_OPEN = true;
     class={'scale-x-[-1] -translate-y-1 scale-y-[-1] w-full'}
   />
   <section
-    class='grid grid-cols-1 gap-20 py-5 md:py-32 md:grid-cols-2 container'
+    class='grid grid-cols-1 gap-20 py-5 md:pt-32 md:grid-cols-2 container'
   >
     <aside>
       <h2 class='text-5xl font-semibold'>Interested in working with us?</h2>
@@ -33,4 +34,14 @@ const APPLICATION_OPEN = true;
     </aside>
     <ContactForm />
   </section>
+  <Image
+    src={ContactWave}
+    alt={'wave'}
+    class='max-lg:hidden -translate-y-1/2 w-full'
+  />
+  <Image
+    src={ContactCurve}
+    alt={'wave'}
+    class='max-lg:hidden absolute bottom-0 translate-y-full'
+  />
 </Layout>
