@@ -13,7 +13,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en' data-theme='default'>
+<html lang='en' data-theme='aggie'>
   <head>
     <meta charset='UTF-8' />
     <meta name='description' content='Astro description' />
@@ -41,9 +41,8 @@ const { title } = Astro.props;
         --font-mono: 'Roboto Mono', monospace;
         --font-sans: 'Inter', sans-serif;
       }
-
       button {
-        font-family: 'Roboto Mono', monospace;
+        font-family: var(--font-mono);
       }
     </style>
   </body>

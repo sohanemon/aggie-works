@@ -2,6 +2,8 @@
 import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import Divider from '~/divider1.svg';
+import Wave from '~/texture2.svg';
+
 import HeroImg from '~/join-hero.png';
 
 import Button from '../ui/button.astro';
@@ -12,6 +14,11 @@ const { class: className } = Astro.props;
 ---
 
 <div class={cn('md:my-28 my-8 relative', className)}>
+  <Image
+    src={Wave}
+    alt={''}
+    class={'w-full scale-x-[-1] max-md:hidden -translate-y-20 -z-10 absolute'}
+  />
   <h2 class='text-5xl font-semibold container'>
     Interested in AggieWorks?<br />You’re in the right place.
   </h2>

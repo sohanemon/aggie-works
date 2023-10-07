@@ -1,6 +1,4 @@
-import containerQueries from '@tailwindcss/container-queries';
 import type { Config } from 'tailwindcss';
-import animations from 'tailwindcss-animate';
 import { createThemes } from 'tw-colors';
 
 import daisyui from 'daisyui';
@@ -11,15 +9,10 @@ import { utilities } from './utilities';
 
 const themePreset = {
   content: [],
-  plugins: [
-    theme,
-    base,
-    utilities,
-    containerQueries,
-    animations,
-    daisyui,
-    createThemes(colors),
-  ],
+  plugins: [theme, base, utilities, createThemes(colors), daisyui],
+  daisyui: {
+    themes: [],
+  },
 } satisfies Config;
 
 export default themePreset;

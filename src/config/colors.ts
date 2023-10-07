@@ -1,5 +1,5 @@
 export const colors = {
-  default: {
+  aggie: {
     background: '#ffffff',
     foreground: '#232121',
     card: '#ffffff',

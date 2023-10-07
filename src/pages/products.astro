@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import AE from '~/banner/AE.png';
 import Clubly from '~/banner/Clubly.png';
 import Roomu from '~/banner/Roomu.png';
+import Wave from '~/texture2.svg';
+import PinkWave from '~/wave-pink.svg';
 import ProductCard from '../components/products/product-card.astro';
 import Layout from '../layouts/Layout.astro';
 
@@ -37,7 +40,16 @@ export const productData = [
       </p>
     </div>
   </div>
-  <div class='mt-20'>
+  <div class='mt-20 bg-gradient-brand md:space-y-32 relative md:pb-32'>
+    <Image
+      src={Wave}
+      alt={''}
+      class={'w-full scale-x-[-1] max-md:hidden -z-10 absolute'}
+    /><Image
+      src={PinkWave}
+      alt={''}
+      class={'w-full bottom-32  max-md:hidden -z-10 absolute'}
+    />
     {productData.map((el) => <ProductCard {...el} />)}
   </div>
 </Layout>

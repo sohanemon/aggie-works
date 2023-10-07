@@ -2,11 +2,13 @@
 import Board from '@/components/team/board.astro';
 import Layout from '@/layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import TeamWave from '~/team-wave.svg';
 import Wave from '~/wave.svg';
 ---
 
 <Layout title='Team'>
   <div class='bg-foreground h-20'></div>
+  <Image src={TeamWave} alt={''} class={'absolute right-0 max-md:hidden'} />
   <Image
     src={Wave}
     alt={''}

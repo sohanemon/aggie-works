@@ -1,5 +1,7 @@
 ---
 import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import TimelineWave from '~/timeline-wave.svg';
 type Props = {
   class?: string;
 };
@@ -33,6 +35,11 @@ const accordionData = [
 const { class: className } = Astro.props;
 ---
 
+<Image
+  src={TimelineWave}
+  alt={'wave'}
+  class='absolute max-lg:hidden w-full -z-10'
+/>
 <div class={cn('container-mini  my-32 ', className)}>
   <div class='max-w-2xl'>
     <h2 class='md:text-[40px] text-3xl font-semibold'>How We Work</h2>

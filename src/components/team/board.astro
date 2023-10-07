@@ -95,12 +95,7 @@ const data = [
 const { class: className } = Astro.props;
 ---
 
-<div
-  class={cn(
-    'bg-gradient-to-t from-primary/10 via-primary/30 to-transparent',
-    className
-  )}
->
+<div class={cn('bg-gradient-brand', className)}>
   <h5 class='md:text-[40px] text-3xl container font-semibold mb-14'>Board</h5>
   <div
     class='container grid grid-cols-1 max-sm:justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
