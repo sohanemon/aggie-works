@@ -6,8 +6,6 @@ type Props = {
 const { class: className } = Astro.props;
 ---
 
-<h1
-  class={cn('text-center  md:text-[40px] text-3xl  font-semibold', className)}
->
+<h1 class={cn('text-center  md:text-[40px] text-3xl  font-bold', className)}>
   <slot />
 </h1>

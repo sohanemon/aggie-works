@@ -2,12 +2,13 @@
 import Experience from '@/components/homepage/experience.astro';
 import Hero from '@/components/homepage/hero.astro';
 import OurProducts from '@/components/homepage/our-products.astro';
-import Quote from '@/components/homepage/quote.astro';
+
+import { Quote } from '@/components/homepage/quote';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Aggie Works'>
   <Hero /><OurProducts />
   <Experience />
-  <Quote />
+  <Quote client:visible />
 </Layout>

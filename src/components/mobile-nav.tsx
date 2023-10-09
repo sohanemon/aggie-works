@@ -12,7 +12,7 @@ export const navItems = [
 export function MobileNav({ path, ...props }: MobileNavProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div {...props}>
+    <div className='md:hidden' {...props}>
       <svg
         onClick={() => setIsMenuOpen(true)}
         xmlns='http://www.w3.org/2000/svg'
@@ -31,7 +31,7 @@ export function MobileNav({ path, ...props }: MobileNavProps) {
         <line x1='21' x2='7' y1='18' y2='18' />
       </svg>
       {isMenuOpen && (
-        <ul className='flex fixed flex-col h-fit inset-0 p-5  shadow-md  bg-background items-center gap-4 md:hidden'>
+        <ul className='flex fixed flex-col h-fit inset-0 p-5  shadow-md  bg-background items-center gap-4 '>
           {navItems.map((el) => (
             <a
               href={el.link}

@@ -10,16 +10,16 @@ const pathname = Astro.url.pathname;
   <nav
     class='absolute h-20 md:h-32 container inset-x-0 flex justify-between items-center'
   >
-    <a href='/' class='max-sm:scale-75 origin-left'>
+    <a href='/' class='max-sm:scale-75 scale-90 origin-left'>
       <Image src={Logo} alt={'logo'} />
     </a>
-    <ul class='flex items-center gap-12 max-md:hidden'>
+    <ul class='flex items-center gap-8 max-md:hidden'>
       {
         navItems.map((el) => (
           <a
             href={el.link}
             class={cn(
-              'text-xl hover:text-primary transition-all text-background font-semibold',
+              'hover:text-primary transition-all text-background font-semibold',
               { 'text-primary': pathname.includes(el.link) }
             )}
           >
