@@ -7,9 +7,11 @@ import Wave from '~/texture1.svg';
 import Button from '../ui/button.astro';
 ---
 
-<main class='min-h-[800px] gradient relative overflow-hidden flex items-center'>
+<main
+  class='md:min-h-[800px] min-h-[400px] gradient relative overflow-hidden flex items-center'
+>
   <div class='container'>
-    <h1 class='text-white text-5xl lg:text-[64px] font-semibold'>
+    <h1 class='text-white text-3xl md:text-5xl lg:text-[64px] font-semibold'>
       Products built for Aggies,<br />by Aggies.
     </h1>
     <Image
@@ -20,7 +22,7 @@ import Button from '../ui/button.astro';
   </div>
 </main>
 <div class='relative max-md:py-20 md:min-h-screen'>
-  <div class='container flex flex-col pt-32 justify-center'>
+  <div class='container flex flex-col md:pt-32 justify-center'>
     <h4 class='max-w-[538px] font-medium'>
       AggieWorks is a product development organization building software for
       students at UC Davis. We are a tight-knit community of engineers,
