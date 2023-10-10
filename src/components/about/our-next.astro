@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import Heading from '../ui/heading.astro';
+
 const images = await Astro.glob('../../assets/companies/*.png').then((files) =>
   files.map((file) => file.default)
 );
