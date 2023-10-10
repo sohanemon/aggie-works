@@ -44,11 +44,11 @@ export const productData = [
     <Image
       src={Wave}
       alt={''}
-      class={'w-full scale-x-[-1] max-md:hidden -z-10 absolute'}
+      class={'w-full scale-x-[-1] max-w-[1800px] inset-x-0 mx-auto max-md:hidden -z-10 absolute'}
     /><Image
       src={PinkWave}
       alt={''}
-      class={'w-full bottom-32  max-md:hidden -z-10 absolute'}
+      class={'w-full bottom-32 max-w-[1800px] inset-x-0 mx-auto max-md:hidden -z-10 absolute'}
     />
     {productData.map((el) => <ProductCard {...el} />)}
   </div>
