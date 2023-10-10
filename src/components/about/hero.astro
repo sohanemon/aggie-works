@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import Divider from '~/divider1.svg';
 import team from '~/team.png';
+import { Slider } from './slider';
 type Props = {
   class?: string;
 };
@@ -15,7 +16,7 @@ const { class: className } = Astro.props;
       class='container text-5xl leading-normal font-semibold text-background pt-40 pb-11'
     >
       <span>We are a community of</span>
-      <br /><span class='text-pink-600'>product managers.</span>
+      <br /><Slider client:load />
     </div>
   </div>
   <div class='bg-background h-[450px] relative'>

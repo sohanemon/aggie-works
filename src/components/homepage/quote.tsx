@@ -9,11 +9,13 @@ export function Quote() {
         <Swiper
           centeredSlides
           loop
+          spaceBetween={20}
           grabCursor
+          slidesPerView={1}
           modules={[Autoplay]}
           autoplay
           breakpoints={{
-            600: { slidesPerView: 2 },
+            800: { slidesPerView: 2 },
             1200: { slidesPerView: 3 },
           }}
         >

@@ -1,0 +1,20 @@
+#hello {
+  position: relative;
+  top: 50px;
+  opacity: 0;
+  animation: slide 2s ease;
+}
+@keyframes slide {
+  0% {
+    top: 50px;
+    opacity: 0px;
+  }
+  60% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: -40px;
+    opacity: 0px;
+  }
+}
